@@ -83,6 +83,7 @@ Surname : 5ff9d0165b4f92b14994e5c685cdce28
 ## Flag
 The flag we've got is [FortyTwo](#https://md5.gromweb.com/?md5=5ff9d0165b4f92b14994e5c685cdce28)
 After converting FortyTwo to [sha256](#https://crypt-online.ru/crypts/sha256/) as in the instruction we get a flag.
+```echo -n "FortyTwo" | shasum -a 256```
 
 ## Safety
 The IT safety of the web in this case is compromised due to several security vulnerabilities, mainly SQL injection. 
