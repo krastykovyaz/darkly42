@@ -33,7 +33,7 @@ Then we get the following output.
 ## Flag
 Let's convert [I_am_admit](#https://md5.gromweb.com/?md5=68934a3e9455fa72420237eb05902327) from md5. We get __false__. </br>
 So what about __true__ ```echo -n 'true' | md5``` -> 'b326b5062b2f0e69046810717534cb09'
-When wecompare the outputs with cookies true and false weget the next flag.
+When we compare the outputs with cookies true and false weget the next flag.
 ```
 curl -s 'http://192.168.99.101' -o false.html
 curl -s --cookie I_am_admin=$(echo -n 'true' | md5) 'http://192.168.99.101' -o true.html 
