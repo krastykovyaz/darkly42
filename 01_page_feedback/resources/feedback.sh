@@ -1,5 +1,5 @@
 #!/bin/bash
-base='http://192.168.99.101'
+base='http://192.168.56.101'
 curl $base'/?page=feedback' \
 	-H 'Connection: keep-alive' \
 	-H 'Pragma: no-cache' \

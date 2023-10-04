@@ -3,7 +3,7 @@ from tqdm import tqdm
 import requests
 from bs4 import BeautifulSoup
 
-page = 'http://192.168.99.101/.hidden/'
+page = 'http://192.168.56.101/.hidden/'
 
 def walking_over_dirs(url):
     uniq = set()

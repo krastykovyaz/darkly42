@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-page='http://192.168.99.101/?page=feedback'
+page='http://192.168.56.101/?page=feedback'
 
 def get_feedback(page,idx):
 	req = requests.post(page, data = {

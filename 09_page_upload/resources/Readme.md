@@ -1,6 +1,6 @@
 # Upload files Page
 
-__http://192.168.99.101/?page=upload__
+__http://192.168.56.101/?page=upload__
 
 ## Description
 This page for uploading documents. 

@@ -1,12 +1,12 @@
 # Redirect Page
 
-__http://192.168.99.101/index.php?page=redirect&site=twitter__
+__http://192.168.56.101/index.php?page=redirect&site=twitter__
 
 ## Description
 When I push at the bottom of the social ("facebook", "twitter", "instagram"). For example I ve got the redirection.
 
 ## Form Outputs
-In the redirection I've got [page](#http://192.168.99.101/index.php?page=redirect&site=twitter)
+In the redirection I've got [page](#http://192.168.56.101/index.php?page=redirect&site=twitter)
 
 ## Flag
 GOOD JOB HERE IS THE FLAG and up finger.

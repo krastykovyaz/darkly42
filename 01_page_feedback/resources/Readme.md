@@ -1,5 +1,5 @@
 # Feedback Page
-__http://192.168.99.101/?page=feedback__
+__http://192.168.56.101/?page=feedback__
 ## Description
 This is a feedback page where users can provide feedback. 
 
@@ -8,7 +8,7 @@ The readme file needs improvement as the page appears to be poorly written. The 
 Even if the JavaScript was functional and properly checked the lengths of both fields' names and messages, it would still be possible to perform an HTTP post request with empty variables (for example, via curl or Python's requests). While playing with the page, it was discovered that it will only show the flag when the "mtxtMessage" is set to certain values. For instance, testing with a one-character string "a" showed the flag. On the other hand, testing with other characters like "b" did not work, but "c" did. Therefore, a small script was written to test all possible values from 0 to 255.
 
 ## Flag
-I've got a hash of the flag by rendering the [page](#http://192.168.99.101/?page=feedback). 
+I've got a hash of the flag by rendering the [page](#http://192.168.56.101/?page=feedback). 
 
 
 ## Key Takeaway
