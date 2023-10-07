@@ -17,15 +17,11 @@ Let's look on the page source exactly to ```</form>``` tag.
 We get the email __webmaster@borntosec.com__.
 
 ## Flag
-Let's use obtained email and compare with random email.
-```
-curl -s 'http://192.168.56.101/?page=recover' --data 'mail=webmaster%40borntosec.com&Submit=Submit' -o webmaster.html
-curl -s 'http://192.168.56.101/?page=recover' --data 'mail=krasty%40lnoisome.com&Submit=Submit' -o krasty.html
-diff webmaster.html krasty.html 
-```
-Inside the diff output html we get the flag
+change webmaster@borntosec.com to other one value
+In the output we get the flag
 
 ## Safety
+XSS attact
 When it comes to web safety, there are a few important points to consider based on the exercise: </br>
 1. Be cautious with password recovery pages: Password recovery pages should be handled with care as they often involve sensitive information. It's crucial to ensure that the page is secure and that any personal data, such as email addresses, are protected.
 2. Check the page source: Examining the page source can often reveal important information about a website's functionality or vulnerabilities. In this exercise, checking the page source helped uncover the email address associated with password recovery.

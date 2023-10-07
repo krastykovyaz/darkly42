@@ -6,7 +6,7 @@ __http://192.168.56.101/?page=upload__
 This page for uploading documents. 
 
 ## Form Outputs
-I have upload image and get the output ```/tmp/avatar.jpg succesfully uploaded.```.
+I have upload image and get the output ```/tmp/pic.jpg succesfully uploaded.```.
 
 ## Flag
 When we launch the python script we get the next flag.

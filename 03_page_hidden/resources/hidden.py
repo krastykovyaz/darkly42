@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from tqdm import tqdm
 import requests
 from bs4 import BeautifulSoup
+from time import sleep
 
 page = 'http://192.168.56.101/.hidden/'
 
@@ -22,6 +22,8 @@ def walking_over_dirs(url):
                 count += 1
                 print(f'\rscanning item #{count}', end='')
                 req2 = requests.get(url + link)
+                if count % 10 == 0:
+                    sleep(1)
                 if req2.text not in uniq:
                     uniq.add(req2.text)
                     print('\n', req2.text, url + link)
